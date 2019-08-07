@@ -47,8 +47,8 @@ auth_token = "d4f3175392184e0de7dfe77f730fae7d"
 
 #Text the answer!
 message = @client.api.account.messages.create(
-    :from => "+15139931469",
-    :to => "+15133177574",
+    :from => "+1xxxxxxxxxx",
+    :to => "+1xxxxxxxxxx",
     :body => "You asked #{question}, and the magic 8 ball says #{magic_answer}"
 )
 
