@@ -33,6 +33,7 @@ BINGO
 puts bingo_card
 
 header = ["B", "I", "N", "G", "O"]
+n_col.insert(2, "F")
 
 Prawn::Document.generate("bingo.pdf") do
     define_grid(columns: 5, rows: 6)
@@ -58,6 +59,13 @@ Prawn::Document.generate("bingo.pdf") do
         end
     end
 
+    n_col.each_with_index do |num, i|
+        grid((i + 1), 2).bounding_box do
+            stroke_bounds
+            text num.to_s, align: :center, valign: :center, size: 50
+        end
+    end
+
     g_col.each_with_index do |num, i|
         grid((i + 1), 3).bounding_box do
             stroke_bounds
@@ -71,7 +79,4 @@ Prawn::Document.generate("bingo.pdf") do
             text num.to_s, align: :center, valign: :center, size: 50
         end
     end
-
-
-
 end
