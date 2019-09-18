@@ -1,4 +1,5 @@
 module Hangman
+  Signal.trap("INT") {Graphics.clear_screen; puts "Goodbye cruel world!!"; exit }
   class Game
     attr_reader :chances, :word, :wrong_tries, :guess, :wrong_guess
 
@@ -52,7 +53,7 @@ module Hangman
             sleep 0.3
 
             Graphics.clear_screen
-            puts Graphics::ALIVE3          
+            puts Graphics::ALIVE3
             puts "\n\nWELL DONE!! YOU SURVIVED"
             break
           end
