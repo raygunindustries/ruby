@@ -42,7 +42,6 @@ end
 get '/:birthdate' do
 	birthdate = params[:birthdate]
 	birth_path_num = get_birth_path_num(birthdate)
-	message = get_message(birth_path_num)
-	"#{message}"
+	@message = get_message(birth_path_num)
+	erb :index
 end
-
