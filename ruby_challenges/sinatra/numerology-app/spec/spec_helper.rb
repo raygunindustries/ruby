@@ -1,4 +1,3 @@
-
 # we need to tell Rack (remember what Rack is?) that we are just testing.
 # normally this is 'development'
 ENV['RACK_ENV'] = 'test'
@@ -13,12 +12,12 @@ require 'rack/test'
 
 
 module SpecHelper
-  include Rack::Test::Methods  
+  include Rack::Test::Methods
   # Rack::Test looks for this app variable
   def app
     Sinatra::Application
   end
-    
+
   # I'm being lazy a.k.a thinking like a programmer
   # Let's map the numerology number to the message with a hash
   # To stretch yourself, you could try this in your web app!
@@ -32,5 +31,5 @@ module SpecHelper
     "7" => { birthdate: "12121999", message: "This is the deep thinker. The number seven is a spiritual vibration. These people are not very attached to material things, are introspective, and generally quiet. Ruled by Neptune." },
     "8" => { birthdate: "12131999", message: "This is the manager. Number Eight is a strong, successful, and material vibration. Ruled by Saturn." },
     "9" => { birthdate: "12141999", message: "This is the teacher. Number Nine is a tolerant, somewhat impractical, and sympathetic vibration. Ruled by Mars." }
-  }  
+  }
 end
